@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>anaconda 在mac上的安装与配置 - linupy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "anaconda \u5728mac\u4e0a\u7684\u5b89\u88c5\u4e0e\u914d\u7f6e";
+    var mkdocs_page_input_path = "\u5173\u4e8e\u7a0b\u5e8f\u914d\u7f6e/anaconda_set_in_mac.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>anaconda 在mac上的安装与配置</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="anaconda-mac">anaconda 在mac上的安装与配置</h1>
+<p><strong>本文将介绍anaconda在mac上的安装方法,基本用法及如何在atom上使用anadonda的虚拟环境</strong></p>
+<h2 id="1-anacondamac">1 anaconda在mac上的安装</h2>
+<h3 id="_1">方法一</h3>
+<ol>
+<li>进入anaconda的官网下载界面<a href="https://www.anaconda.com/download/#macos">download</a></li>
+<li>这里可以看到两个选项 : <strong><em>命令行</em></strong> 和 <strong><em>图形界面</em></strong> 这里我们选择命令行        版进行下载</li>
+<li>下载完成后, 按 <bottom>cmd + t </bottom>  打开终端 进入我们的下载目录: </li>
+</ol>
+<pre><code>cd ~/Download/
+bash ./Anaconda3.sh #执行我们刚才下载的文件,文件名要看你自己的
+</code></pre>
+<ol>
+<li>在等待一会后anaconda就安装好了</li>
+</ol>
+<h3 id="_2">方法二</h3>
+<ol>
+<li>如果你安装了brew (没安装也没关系 执行<code>ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"</code>进行安装)</li>
+<li>执行<code>brew search anaconda</code>会找到这个路径: <code>homebrew/cask/anaconda</code></li>
+<li>执行<code>brew install homebrew/cask/anaconda</code></li>
+<li>我的心在等待,在ya在等待...</li>
+<li>将conda加入系统变量
+执行</li>
+</ol>
+<pre><code>echo &quot;export PATH=\&quot;your install path\&quot;&gt;&gt;~/.bash_profile
+source ~/.bash_profile
+ ```
+
+## 2 anaconda的基本使用
+1. 创建一个新用户 
+</code></pre>
+<p>conda create --name name_you_want python=version_you_want package1 package2 </p>
+<pre><code>python版本和包是可选的.默认为python2.7
+2. 现在执行```conda info --envs```
+    现在应该看到系统有两个环境*root* 和*你刚才建的环境*
+3. 可以使用```conda activate your_env```来激活环境
+4. 安装包
+直接使用pip 安装即可: `pip install packeage_name`
+5. 如果想删除一个环境可以使用`conda remove envs_name`
+
+## 3 将anaconda配置的环境应用到atom
+
+1. 打开atom后,按`shift + cmd + p`搜索 文件init
+2. 进入init.coffee后在最后一行添加
+</code></pre>
+<p>process.env.PATH = ['~/anaconda/bin/', process.env.PATH].join(':')
+```</p>
+<ol>
+<li>重启即可</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

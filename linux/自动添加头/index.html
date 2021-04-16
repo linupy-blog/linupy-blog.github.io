@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>自动添加头 - linupy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u81ea\u52a8\u6dfb\u52a0\u5934";
+    var mkdocs_page_input_path = "linux/\u81ea\u52a8\u6dfb\u52a0\u5934.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>自动添加头</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>autocmd BufNewFile <em>.c,</em>.cpp,<em>.sh,</em>.py,<em>.java exec ":call SetTitle()"                                                                                     <br />
+"定义函数SetTitle，自动插入文件头
+func SetTitle()
+        "如果文件类型为.c或者.cpp文件
+        if (&amp;filetype == 'c' || &amp;filetype == 'cpp')
+                call setline(1, "/</em><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong>")<br />
+                call setline(2, "\ @Author: 你的名字")<br />
+                call setline(3, "\ @Created Time : ".strftime("%c"))<br />
+                call setline(4, "\ @File Name: ".expand("%"))<br />
+                call setline(5, "\ @Description:")<br />
+                call setline(6, " </strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>/")<br />
+                call setline(7,"")<br />
+        endif
+        "如果文件类型为.sh文件
+        if &amp;filetype == 'shell'<br />
+                call setline(1, "#!/bin/sh")
+                call setline(2, "# Author: 你的名字")
+                call setline(3, "# Created Time : ".strftime("%c"))
+                call setline(4, "# File Name: ".expand("%"))
+                call setline(5, "# Description:")
+                call setline(6,"")
+        endif
+        "如果文件类型为.py文件
+        if &amp;filetype == 'python'
+                call setline(1, "#!/usr/bin/env python")
+                call setline(2, "# -<em>- coding=utf8 -</em>-")
+                call setline(3, "\"\"\"")
+                call setline(4, "# Author: 你的名字")
+                call setline(5, "# Created Time : ".strftime("%c"))
+                call setline(6, "# File Name: ".expand("%"))
+                call setline(7, "# Description:")
+                call setline(8, "\"\"\"")
+                call setline(9,"")
+        endif
+        "如果文件类型为.java文件
+        if &amp;filetype == 'java'<br />
+                call setline(1, "//coding=utf8")<br />
+                call setline(2, "/<em><em>")<br />
+                call setline(3, "\ </em>\ @Author: 你的名字")<br />
+                call setline(4, "\ </em>\ @Created Time : ".strftime("%c"))<br />
+                call setline(5, "\ <em>\ @File Name: ".expand("%"))<br />
+                call setline(6, "\ </em>\ @Description:")<br />
+                call setline(7, "\ */")<br />
+                call setline(8,"")<br />
+        endif
+endfunc
+" 自动将光标移动到文件末尾
+autocmd BufNewfile * normal G</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

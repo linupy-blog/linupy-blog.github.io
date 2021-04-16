@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>atom配置anaconda虚拟环境附带atom修改快捷键 - linupy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "atom\u914d\u7f6eanaconda\u865a\u62df\u73af\u5883\u9644\u5e26atom\u4fee\u6539\u5feb\u6377\u952e";
+    var mkdocs_page_input_path = "\u5173\u4e8e\u7a0b\u5e8f\u914d\u7f6e/atom\u914d\u7f6eanaconda\u865a\u62df\u73af\u5883\u9644\u5e26atom\u4fee\u6539\u5feb\u6377\u952e.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>atom配置anaconda虚拟环境附带atom修改快捷键</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="atomanacondaatom">atom配置anaconda虚拟环境附带atom修改快捷键</h1>
+<p><strong><em>引言: 本来打算在我以前写的<a href="https://mp.csdn.net/mdeditor/78386279#">怎么在atom下运行python</a>加上一段内容,没想到内容实在太多,而且网上没有找到相关文章,故特写此文,为你解忧.</em></strong></p>
+<!--more-->
+<ol>
+<li>atom配置anaconda虚拟环境<ol>
+<li>在atom中安装插件 atom-runner.
+    atom-running可以自己选择解释器的内容,这就可以配置为自己的虚拟环境. 依次打开atom-&gt;setting-&gt;install 搜索atom-runner,点击安装即可.</li>
+<li>配置config文件<ul>
+<li>在atom中搜索config.cson,或者点击file-&gt;config,或者在terminal中<code>vim ~/.atom/config.cson</code></li>
+<li>
+<p>在配置文件中添加</p>
+<p><code>bash
+runner:
+    extensions:
+      ps1: "powershell –file"
+      "spec.coffee": "mocha"
+    scopes:
+      coffee: "coffee"
+      go: "go run"
+      js: "node"
+      powershell: "powershell -noninteractive -noprofile -c -"
+      python: "/Users/fraze_smith/anaconda3/envs/Crawler/bin/python3"
+      ruby: "ruby"
+      shell: "bash"</code>
+        这里是指定你的编译器,默认为系统编译器.
+        你需要把python 行中改为你自己的虚拟环境,如果不明白可以问我.
+        现在打开一个py文件,按ctrl-r就可以运行了.
+2. atom修改快捷键
+    1. 本来已经结束了,但是由于我安装了vim插件所以<code>ctrl-r</code>命令冲突了.
+        所以就需要修改快捷键了.
+    2. 在terminal中<code>vim ~/.atom/keymap.cson</code>
+    3. 添加:
+     <code>bash
+        'atom-text-editor':
+          'ctrl-alt-r': 'run:file'</code>
+    第一行是说作用区域在编辑区,也就是在编辑区按键起作用.
+    第二行是要修改的快捷键 和 作用插件(可以在keybind中查看名称)
+    现在我们就把runner-python的启动快捷键改为 ctrl-alt-r了.
+   4. 现在打开一个py文件按下ctrl-alt-r应该就执行了.
+   ## 有缘再见 </p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

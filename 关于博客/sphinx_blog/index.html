@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>sphinx博客搭建 - linupy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "sphinx\u535a\u5ba2\u642d\u5efa";
+    var mkdocs_page_input_path = "\u5173\u4e8e\u535a\u5ba2/sphinx_blog.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>sphinx博客搭建</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sphinx">sphinx博客搭建</h1>
+<blockquote>
+<p>刚刚进入了2020年,python2正式退出了历史舞台.而网上大部分的sphinx都是基於python2搭建的,可能以后会有各种兼容性的问题.所以這裏使用python3環境搭建.</p>
+</blockquote>
+<h2 id="_1">環境:</h2>
+<pre><code class="language-bash">mkdir blog #　新建一個博客文件夾
+cd blog
+virtualenv envs # 新建一個虛擬環境
+source envs/bin/activate # 激活虚拟环境
+pip3 install sphinx sphinx-autobuild sphinx-rtd-theme
+sphinx-quickstart # 創建目錄樹
+</code></pre>
+<h2 id="_2">配置:</h2>
+<pre><code class="language-bash">.
+├── build
+├── dp.sh
+├── make.bat
+├── Makefile
+├── README.md
+├── source
+└── venv
+</code></pre>
+<blockquote>
+<p>你創建的博客目錄沒有dp.sh和README.md這兩個文件,第一個是我push用的,第二個是git目錄要求的.</p>
+</blockquote>
+<p>其中make.bat和Makefile都是部署文件用不到,我們寫的博客都應該放在source目錄中.bliud目錄用來放置生成的HTML文件.
+讓我們進source目錄看看.</p>
+<pre><code class="language-bash">├── _build
+├── conf.py
+├── index.rst
+├── linux
+├── net_work
+├── _static
+├── _templates
+├── 关于博客
+├── 关于程序配置
+├── 好人
+├── 好文_好书
+├── 语录.md
+└── 闲谈
+</code></pre>
+<p>conf.py是配置文件用來設置主題語言插件等,index.rst是索引頁,也就是博客的主頁.rst是reStructureText文件的後綴,sphinx文檔默認使用reStructureText格式.
+我習慣使用MarkDown寫博客所以需要在conf.py修改一下.</p>
+<pre><code class="language-bash">pip3 install recommonmark # 安裝md支持
+vim conf.py
+</code></pre>
+<p>添加下面的內容:</p>
+<pre><code class="language-bash">html_theme = 'sphinx_rtd_theme'  # 修改主題爲sphinx_rsd_theme
+ # supposed for markdown
+ 65 from recommonmark.parser import CommonMarkParser
+ 66 source_parsers = {
+ 67 '.md': CommonMarkParser,
+ 68 }
+ 69 source_suffix = ['.rst', '.md']   
+</code></pre>
+<p>現在博客就支持md格式了.</p>
+<p>現在讓我們看看index.rst.</p>
+<p><code>vim index.rst</code></p>
+<pre><code class="language-rst"> 1 .. fazong documentation master file, created by                              
+  2    sphinx-quickstart on Sat Jan  4 21:22:44 2020.
+  3    You can adapt this file completely to your liking, but it should at least
+  4    contain the root `toctree` directive.
+  5 
+  6 法宗不是机器人
+  7 ==================================
+  8 
+  9 .. toctree::
+ 10    :maxdepth: 2 # 設置顯示的最大深度
+ 11     # 這裏需要空一行        
+ 12    linux/work_with_arch.md
+ 13    linux/index.rst
+ 14    好文_好书/index.rst
+ 15    好人/good_man.rst
+ 16    闲谈/talk.rst
+ 17    /语录.md
+ 18    关于程序配置/index.rst
+ 19    关于博客/index.rst
+        # 可以在這裏建立子目錄,然後用上面的方式索引,子目錄中也需要建立index.srt文件進行索引,具體目錄結構可以去github看.
+</code></pre>
+<h2 id="_3">部署:</h2>
+<p>在博客目錄中執行<code>make html</code> 生成html文件.生成的html文件會在<code>./build/html</code>中.</p>
+<p>到github創建一個倉庫,名字的格式是: <code>your_github_name.github.io</code></p>
+<p><img alt="" src="../../img/gitpages.png" /></p>
+<p>然後進入<code>build/html</code>目錄,根據gitgub的提示,把html中的文件push到github上.</p>
+<p><strong>注意: gitpages會忽視以下劃線開頭的文件,爲使_static中的css等被加載,需要在html目錄中添加一個<code>.nojekyll</code>文件.</strong></p>
+<p>簡化操作,我寫了一個腳本:</p>
+<pre><code class="language-bash">  1 echo &quot;making&quot;                                                                             
+  2 
+  3 make html
+  4 
+  5 echo &quot;正在push&quot;
+  7 cd build/html/
+  8 git add .
+  9 git commit -m 'update blog files'
+ 10 git push origin master --force
+ 11 git push coding master --force
+ 12 echo &quot;push完成&quot;                                                                                                                                                                                            
+</code></pre>
+<p>每次發佈文章,執行這個腳本即可.</p>
+<p>現在訪問<code>https://user_name.github.io</code>就可以看到你的博客了.</p>
+<p>本文完.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
