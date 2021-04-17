@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="黑红">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>atom配置anaconda虚拟环境附带atom修改快捷键 - linupy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "atom\u914d\u7f6eanaconda\u865a\u62df\u73af\u5883\u9644\u5e26atom\u4fee\u6539\u5feb\u6377\u952e";
+    var mkdocs_page_input_path = "\u5173\u4e8e\u7a0b\u5e8f\u914d\u7f6e/atom\u914d\u7f6eanaconda\u865a\u62df\u73af\u5883\u9644\u5e26atom\u4fee\u6539\u5feb\u6377\u952e.md";
+    var mkdocs_page_url = "/%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E9%85%8D%E7%BD%AE/atom%E9%85%8D%E7%BD%AEanaconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%99%84%E5%B8%A6atom%E4%BF%AE%E6%94%B9%E5%BF%AB%E6%8D%B7%E9%94%AE/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Index</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../linux/work_with_arch/">完全用linux工作</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../linux/i3wm/">i3wm中文文档</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">杂谈</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/win%E5%9C%A8%E7%BC%96%E7%A8%8B%E6%96%B9%E9%9D%A2%E7%9A%84%E7%BC%BA%E9%99%B7/">win在编程方面的缺陷</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BD%AA%E6%81%B6/">推荐系统的罪恶</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/%E6%94%AF%E6%8C%81webdav%E7%9A%84%E7%BD%91%E7%9B%98%E6%8E%A8%E8%8D%90/">05支持webdav的网盘推荐</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/%E6%96%87%E6%91%98-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/">06文摘-去中心化</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">一图胜千言</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/license/">一图看懂文章协议</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/map_zh/">中国历代地图</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/open_license/">一图看懂开源协议</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/shadowsocks/">一图看懂shadowsocks原理</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">好文_好书</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/Linux%E6%A1%8C%E9%9D%A2%E7%8E%A9%E5%AE%B6%E6%8C%87%E5%8D%97/">Linux桌面玩家指南</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/%E5%BC%80%E6%BA%90%E4%B8%96%E7%95%8C%E6%97%85%E8%A1%8C%E6%89%8B%E5%86%8C/">开源世界旅行手册</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/%E5%93%A5%E5%BE%B7%E5%B0%94%E5%92%8C%E7%89%A9%E7%90%86%E5%AD%A6%E7%9A%84%E7%BB%88%E7%BB%93/">哥德尔和物理学的终结</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/more/">更多</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">好人</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E4%BA%BA/%E7%BC%96%E7%A8%8B%E9%9A%8F%E6%83%B3/">好人</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>atom配置anaconda虚拟环境附带atom修改快捷键</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="atomanacondaatom">atom配置anaconda虚拟环境附带atom修改快捷键</h1>
+<p><strong><em>引言: 本来打算在我以前写的<a href="https://mp.csdn.net/mdeditor/78386279#">怎么在atom下运行python</a>加上一段内容,没想到内容实在太多,而且网上没有找到相关文章,故特写此文,为你解忧.</em></strong></p>
+<!--more-->
+<ol>
+<li>atom配置anaconda虚拟环境<ol>
+<li>在atom中安装插件 atom-runner.
+    atom-running可以自己选择解释器的内容,这就可以配置为自己的虚拟环境. 依次打开atom-&gt;setting-&gt;install 搜索atom-runner,点击安装即可.</li>
+<li>配置config文件<ul>
+<li>在atom中搜索config.cson,或者点击file-&gt;config,或者在terminal中<code>vim ~/.atom/config.cson</code></li>
+<li>
+<p>在配置文件中添加</p>
+<p><code>bash
+runner:
+    extensions:
+      ps1: "powershell –file"
+      "spec.coffee": "mocha"
+    scopes:
+      coffee: "coffee"
+      go: "go run"
+      js: "node"
+      powershell: "powershell -noninteractive -noprofile -c -"
+      python: "/Users/fraze_smith/anaconda3/envs/Crawler/bin/python3"
+      ruby: "ruby"
+      shell: "bash"</code>
+        这里是指定你的编译器,默认为系统编译器.
+        你需要把python 行中改为你自己的虚拟环境,如果不明白可以问我.
+        现在打开一个py文件,按ctrl-r就可以运行了.
+2. atom修改快捷键
+    1. 本来已经结束了,但是由于我安装了vim插件所以<code>ctrl-r</code>命令冲突了.
+        所以就需要修改快捷键了.
+    2. 在terminal中<code>vim ~/.atom/keymap.cson</code>
+    3. 添加:
+     <code>bash
+        'atom-text-editor':
+          'ctrl-alt-r': 'run:file'</code>
+    第一行是说作用区域在编辑区,也就是在编辑区按键起作用.
+    第二行是要修改的快捷键 和 作用插件(可以在keybind中查看名称)
+    现在我们就把runner-python的启动快捷键改为 ctrl-alt-r了.
+   4. 现在打开一个py文件按下ctrl-alt-r应该就执行了.
+   ## 有缘再见 </p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2018至今, 博客文章无特殊说明,以CC-BY-NC协议发布</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

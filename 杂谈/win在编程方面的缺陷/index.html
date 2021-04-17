@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="黑红">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>win在编程方面的缺陷 - linupy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "win\u5728\u7f16\u7a0b\u65b9\u9762\u7684\u7f3a\u9677";
+    var mkdocs_page_input_path = "\u6742\u8c08/win\u5728\u7f16\u7a0b\u65b9\u9762\u7684\u7f3a\u9677.md";
+    var mkdocs_page_url = "/%E6%9D%82%E8%B0%88/win%E5%9C%A8%E7%BC%96%E7%A8%8B%E6%96%B9%E9%9D%A2%E7%9A%84%E7%BC%BA%E9%99%B7/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Index</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../linux/work_with_arch/">完全用linux工作</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../linux/i3wm/">i3wm中文文档</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">杂谈</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        win在编程方面的缺陷
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#win_1">那么win到底有什么问题呢?</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BD%AA%E6%81%B6/">推荐系统的罪恶</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../%E6%94%AF%E6%8C%81webdav%E7%9A%84%E7%BD%91%E7%9B%98%E6%8E%A8%E8%8D%90/">05支持webdav的网盘推荐</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../%E6%96%87%E6%91%98-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/">06文摘-去中心化</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">一图胜千言</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/license/">一图看懂文章协议</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/map_zh/">中国历代地图</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/open_license/">一图看懂开源协议</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/shadowsocks/">一图看懂shadowsocks原理</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">好文_好书</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/Linux%E6%A1%8C%E9%9D%A2%E7%8E%A9%E5%AE%B6%E6%8C%87%E5%8D%97/">Linux桌面玩家指南</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/%E5%BC%80%E6%BA%90%E4%B8%96%E7%95%8C%E6%97%85%E8%A1%8C%E6%89%8B%E5%86%8C/">开源世界旅行手册</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/%E5%93%A5%E5%BE%B7%E5%B0%94%E5%92%8C%E7%89%A9%E7%90%86%E5%AD%A6%E7%9A%84%E7%BB%88%E7%BB%93/">哥德尔和物理学的终结</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/more/">更多</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">好人</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E4%BA%BA/%E7%BC%96%E7%A8%8B%E9%9A%8F%E6%83%B3/">好人</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>杂谈 &raquo;</li>
+        
+      
+    
+    <li>win在编程方面的缺陷</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="win">win在编程方面的缺陷</h1>
+<blockquote>
+<p>我一直使用linux系统,但是一直有人问我win编程不行吗?</p>
+<p>可以但是没有必要.</p>
+</blockquote>
+<h2 id="win_1">那么win到底有什么问题呢?</h2>
+<ul>
+<li>从源头来说,win一开始就是面向家庭用户的</li>
+</ul>
+<p>win在一开始就是一个DOS的应用程序,慢慢的功能不断增多,才变成了操作系统,顺便吐槽一下,微软家的产品往往随着功能的增多而变得臃肿不堪,性能又变得及其低下,win是如此,office也是.而类unix系统(OS X,linux)从一开始就是为程序设计的.</p>
+<ul>
+<li>win的命令行极其丑陋</li>
+</ul>
+<p>不光是外观上,使用上也非常反人类,好像听说现在有第三方的替代品(我也好久没用了不太清楚),那为什么不重新写一个操作系统替代它呢 ;P</p>
+<ul>
+<li>win的目录结构太差劲了.</li>
+</ul>
+<p>我一直都没有搞懂他是怎么设计出这么奇怪的目录树,而且还加了没有必要的分盘(也不知道有什么用),而类unix系统的目录树就清晰的一塌糊涂:</p>
+<p><img alt="一目了然" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1878716240,2127812950&amp;fm=26&amp;gp=0.jpg" /></p>
+<ul>
+<li>linux很少中病毒,当然主是因为小众;p</li>
+<li>win没有包管理系统</li>
+</ul>
+<p>在早期类unix系统的包管理系统可能还要解决各种依赖问题,不过现在只要一行命令,基本你想要的包都可以装上,反观win系统,你要打开游览器,选择一个合适的包,然后安装完你还很有可能忘记它在哪里.</p>
+<p>win的软件商店和OSX也有巨大的差距.</p>
+<ul>
+<li>由上一条也就引出,在win下你的软件配置可能会很麻烦.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BD%AA%E6%81%B6/" class="btn btn-neutral float-right" title="推荐系统的罪恶">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../linux/i3wm/" class="btn btn-neutral" title="i3wm中文文档"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2018至今, 博客文章无特殊说明,以CC-BY-NC协议发布</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../linux/i3wm/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BD%AA%E6%81%B6/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

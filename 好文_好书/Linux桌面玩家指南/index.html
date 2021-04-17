@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="黑红">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Linux桌面玩家指南 - linupy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Linux\u684c\u9762\u73a9\u5bb6\u6307\u5357";
+    var mkdocs_page_input_path = "\u597d\u6587_\u597d\u4e66/Linux\u684c\u9762\u73a9\u5bb6\u6307\u5357.md";
+    var mkdocs_page_url = "/%E5%A5%BD%E6%96%87_%E5%A5%BD%E4%B9%A6/Linux%E6%A1%8C%E9%9D%A2%E7%8E%A9%E5%AE%B6%E6%8C%87%E5%8D%97/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> linupy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Index</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../linux/work_with_arch/">完全用linux工作</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../linux/i3wm/">i3wm中文文档</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">杂谈</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/win%E5%9C%A8%E7%BC%96%E7%A8%8B%E6%96%B9%E9%9D%A2%E7%9A%84%E7%BC%BA%E9%99%B7/">win在编程方面的缺陷</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BD%AA%E6%81%B6/">推荐系统的罪恶</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/%E6%94%AF%E6%8C%81webdav%E7%9A%84%E7%BD%91%E7%9B%98%E6%8E%A8%E8%8D%90/">05支持webdav的网盘推荐</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E6%9D%82%E8%B0%88/%E6%96%87%E6%91%98-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/">06文摘-去中心化</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">一图胜千言</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/license/">一图看懂文章协议</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/map_zh/">中国历代地图</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/open_license/">一图看懂开源协议</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/shadowsocks/">一图看懂shadowsocks原理</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">好文_好书</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Linux桌面玩家指南
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-01-linux">Linux 桌面玩家指南：01. 玩转 Linux 系统的方法论</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-02-vim">Linux 桌面玩家指南：02. 以最简洁的方式打造实用的 Vim 环境</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-03-gnome-3-linux">Linux 桌面玩家指南：03. 针对 Gnome 3 的 Linux 桌面进行美化</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-04-linux">Linux 桌面玩家指南：04. Linux 桌面系统字体配置要略</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-05">Linux 桌面玩家指南：05. 发博客必备的图片处理和视频录制神器</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-06-bash">Linux 桌面玩家指南：06. 优雅地使用命令行及 Bash 脚本编程语言中的美学与哲学</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-07-linux-qemukvmvirtualboxxen">Linux 桌面玩家指南：07. Linux 中的 Qemu、KVM、VirtualBox、Xen 虚拟机体验</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-08-gcc-gnu-binutils-x86-16">Linux 桌面玩家指南：08. 使用 GCC 和 GNU Binutils 编写能在 x86 实模式运行的 16 位代码</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-09-x-window">Linux 桌面玩家指南：09. X Window 的奥秘</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-10-gui">Linux 桌面玩家指南：10. 没有 GUI 的时候应该怎么玩</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-11-linux-linux-nvidia">Linux 桌面玩家指南：11. 在同一个硬盘上安装多个 Linux 发行版以及为 Linux 安装 Nvidia 显卡驱动</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-12-markdownlatexmathjax">Linux 桌面玩家指南：12. 优秀的文本化编辑思想大碰撞（Markdown、LaTeX、MathJax）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-13-git-eclipse">Linux 桌面玩家指南：13. 使用 Git 及其 和 Eclipse 的集成</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-14">Linux 桌面玩家指南：14. 数值计算和符号计算</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-15">Linux 桌面玩家指南：15. 深度学习可以这样玩</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-16-cuda">Linux 桌面玩家指南：16. 使用 CUDA 发挥显卡的计算性能</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-17-ubuntu-deepin-wine-windows">Linux 桌面玩家指南：17. 在 Ubuntu 中使用 deepin-wine，解决一些依赖 Windows 的痛点问题</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-18-docker">Linux 桌面玩家指南：18. 使用 Docker 隔离自己的开发环境和部署环境</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-19-javascript">Linux 桌面玩家指南：19. 深入理解 JavaScript，及其开发调试工具</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linux-20-linux-u">Linux 桌面玩家指南：20. 把 Linux 系统装入 U 盘打包带走</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../%E5%BC%80%E6%BA%90%E4%B8%96%E7%95%8C%E6%97%85%E8%A1%8C%E6%89%8B%E5%86%8C/">开源世界旅行手册</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../%E5%93%A5%E5%BE%B7%E5%B0%94%E5%92%8C%E7%89%A9%E7%90%86%E5%AD%A6%E7%9A%84%E7%BB%88%E7%BB%93/">哥德尔和物理学的终结</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../more/">更多</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">好人</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../%E5%A5%BD%E4%BA%BA/%E7%BC%96%E7%A8%8B%E9%9A%8F%E6%83%B3/">好人</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">linupy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>好文_好书 &raquo;</li>
+        
+      
+    
+    <li>Linux桌面玩家指南</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="linux">Linux桌面玩家指南</h1>
+<h2 id="linux-01-linux"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop001.html">Linux 桌面玩家指南：01. 玩转 Linux 系统的方法论</a></h2>
+<h2 id="linux-02-vim"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop002.html">Linux 桌面玩家指南：02. 以最简洁的方式打造实用的 Vim 环境</a></h2>
+<h2 id="linux-03-gnome-3-linux"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop003.html">Linux 桌面玩家指南：03. 针对 Gnome 3 的 Linux 桌面进行美化</a></h2>
+<h2 id="linux-04-linux"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop004.html">Linux 桌面玩家指南：04. Linux 桌面系统字体配置要略</a></h2>
+<h2 id="linux-05"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop005.html">Linux 桌面玩家指南：05. 发博客必备的图片处理和视频录制神器</a></h2>
+<h2 id="linux-06-bash"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop006.html">Linux 桌面玩家指南：06. 优雅地使用命令行及 Bash 脚本编程语言中的美学与哲学</a></h2>
+<h2 id="linux-07-linux-qemukvmvirtualboxxen"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop007.html">Linux 桌面玩家指南：07. Linux 中的 Qemu、KVM、VirtualBox、Xen 虚拟机体验</a></h2>
+<h2 id="linux-08-gcc-gnu-binutils-x86-16"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop008.html">Linux 桌面玩家指南：08. 使用 GCC 和 GNU Binutils 编写能在 x86 实模式运行的 16 位代码</a></h2>
+<h2 id="linux-09-x-window"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop009.html">Linux 桌面玩家指南：09. X Window 的奥秘</a></h2>
+<h2 id="linux-10-gui"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop010.html">Linux 桌面玩家指南：10. 没有 GUI 的时候应该怎么玩</a></h2>
+<h2 id="linux-11-linux-linux-nvidia"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop011.html">Linux 桌面玩家指南：11. 在同一个硬盘上安装多个 Linux 发行版以及为 Linux 安装 Nvidia 显卡驱动</a></h2>
+<h2 id="linux-12-markdownlatexmathjax"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop012.html">Linux 桌面玩家指南：12. 优秀的文本化编辑思想大碰撞（Markdown、LaTeX、MathJax）</a></h2>
+<h2 id="linux-13-git-eclipse"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop013.html">Linux 桌面玩家指南：13. 使用 Git 及其 和 Eclipse 的集成</a></h2>
+<h2 id="linux-14"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop014.html">Linux 桌面玩家指南：14. 数值计算和符号计算</a></h2>
+<h2 id="linux-15"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop015.html">Linux 桌面玩家指南：15. 深度学习可以这样玩</a></h2>
+<h2 id="linux-16-cuda"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop016.html">Linux 桌面玩家指南：16. 使用 CUDA 发挥显卡的计算性能</a></h2>
+<h2 id="linux-17-ubuntu-deepin-wine-windows"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop017.html">Linux 桌面玩家指南：17. 在 Ubuntu 中使用 deepin-wine，解决一些依赖 Windows 的痛点问题</a></h2>
+<h2 id="linux-18-docker"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop018.html">Linux 桌面玩家指南：18. 使用 Docker 隔离自己的开发环境和部署环境</a></h2>
+<h2 id="linux-19-javascript"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop019.html">Linux 桌面玩家指南：19. 深入理解 JavaScript，及其开发调试工具</a></h2>
+<h2 id="linux-20-linux-u"><a href="https://www.cnblogs.com/youxia/p/LinuxDesktop020.html">Linux 桌面玩家指南：20. 把 Linux 系统装入 U 盘打包带走</a></h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../%E5%BC%80%E6%BA%90%E4%B8%96%E7%95%8C%E6%97%85%E8%A1%8C%E6%89%8B%E5%86%8C/" class="btn btn-neutral float-right" title="开源世界旅行手册">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/shadowsocks/" class="btn btn-neutral" title="一图看懂shadowsocks原理"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2018至今, 博客文章无特殊说明,以CC-BY-NC协议发布</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../%E4%B8%80%E5%9B%BE%E8%83%9C%E5%8D%83%E8%A8%80/shadowsocks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../%E5%BC%80%E6%BA%90%E4%B8%96%E7%95%8C%E6%97%85%E8%A1%8C%E6%89%8B%E5%86%8C/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
